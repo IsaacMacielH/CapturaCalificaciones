@@ -1,9 +1,6 @@
 package edu.captura.api.controller;
 
-import edu.captura.api.profesor.DatosListadoProfesor;
-import edu.captura.api.profesor.DatosRegistroProfesor;
-import edu.captura.api.profesor.Profesor;
-import edu.captura.api.profesor.ProfesorRepository;
+import edu.captura.api.profesor.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -32,5 +29,11 @@ public class ProfesorController {
     @GetMapping
     public Page<DatosListadoProfesor> listadoProfesores(Pageable paginacion){
         return profesorRepository.findAll(paginacion).map(DatosListadoProfesor::new);
+    }
+
+    @PutMapping
+    public void actualizarProfesor(DatosActualizarProfesor datosActualizarProfesor){
+        Profesor profesor = profesorRepository.getReferenceById(datosActualizarProfesor.id());
+        profesor.actualizarDatos(datosActualizarProfesor);
     }
 }

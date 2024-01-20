@@ -28,4 +28,16 @@ public class Profesor {
         this.codigo = datosRegistroProfesor.codigo();
         this.contra = datosRegistroProfesor.contra();
     }
+
+    public void actualizarDatos(DatosActualizarProfesor datosActualizarProfesor) {
+        if(datosActualizarProfesor.nombre() != null){
+            this.nombre = datosActualizarProfesor.nombre();
+        }
+        if(datosActualizarProfesor.apellidos() != null){
+            this.apellidos = datosActualizarProfesor.apellidos();
+        }
+        if(datosActualizarProfesor.contra() != null){
+            this.contra = datosActualizarProfesor.contra();
+        }
+    }
 }
