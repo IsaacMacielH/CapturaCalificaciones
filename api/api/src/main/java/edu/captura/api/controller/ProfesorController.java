@@ -1,6 +1,7 @@
 package edu.captura.api.controller;
 
 import edu.captura.api.profesor.*;
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -31,8 +32,12 @@ public class ProfesorController {
         return profesorRepository.findAll(paginacion).map(DatosListadoProfesor::new);
     }
 
+    //Transactional se usa para terminar la transaccion y que se actualicen los datos en la base de datos
+    //Es como hacer un commit a la base de datos al termionar la transaccion
+    //Si no se pone, hace un roll back y no pasa nada en la base de datos
     @PutMapping
-    public void actualizarProfesor(DatosActualizarProfesor datosActualizarProfesor){
+    @Transactional
+    public void actualizarProfesor(@RequestBody @Valid DatosActualizarProfesor datosActualizarProfesor){
         Profesor profesor = profesorRepository.getReferenceById(datosActualizarProfesor.id());
         profesor.actualizarDatos(datosActualizarProfesor);
     }
