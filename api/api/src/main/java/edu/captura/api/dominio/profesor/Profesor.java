@@ -1,4 +1,4 @@
-package edu.captura.api.profesor;
+package edu.captura.api.dominio.profesor;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -21,12 +21,14 @@ public class Profesor {
     private String apellidos;
     private Integer codigo;
     private String contra;
+    private boolean activo;
 
     public Profesor(DatosRegistroProfesor datosRegistroProfesor) {
         this.nombre = datosRegistroProfesor.nombre();
         this.apellidos = datosRegistroProfesor.apellidos();
         this.codigo = datosRegistroProfesor.codigo();
         this.contra = datosRegistroProfesor.contra();
+        this.activo = true;
     }
 
     public void actualizarDatos(DatosActualizarProfesor datosActualizarProfesor) {
@@ -39,5 +41,9 @@ public class Profesor {
         if(datosActualizarProfesor.contra() != null){
             this.contra = datosActualizarProfesor.contra();
         }
+    }
+
+    public void desactivarProfesor() {
+        this.activo = false;
     }
 }

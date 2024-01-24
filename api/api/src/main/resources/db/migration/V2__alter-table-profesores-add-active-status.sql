@@ -1,0 +1,1 @@
+ALTER TABLE profesores ADD activo TINYINT;

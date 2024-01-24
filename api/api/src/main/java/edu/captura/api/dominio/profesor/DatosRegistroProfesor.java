@@ -1,4 +1,4 @@
-package edu.captura.api.profesor;
+package edu.captura.api.dominio.profesor;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

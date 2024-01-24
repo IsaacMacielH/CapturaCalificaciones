@@ -1,4 +1,4 @@
-package edu.captura.api.profesor;
+package edu.captura.api.dominio.profesor;
 
 public record DatosListadoProfesor(Long id, String nombre, String apellidos, Integer codigo) {
 
