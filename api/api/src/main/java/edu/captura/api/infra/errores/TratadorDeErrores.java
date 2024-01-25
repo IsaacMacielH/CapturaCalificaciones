@@ -1,4 +1,4 @@
-package edu.captura.api.infra;
+package edu.captura.api.infra.errores;
 
 
 import jakarta.persistence.EntityNotFoundException;
