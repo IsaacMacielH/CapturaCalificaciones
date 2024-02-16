@@ -1,0 +1,1 @@
+ALTER TABLE materias ADD activo TINYINT;
