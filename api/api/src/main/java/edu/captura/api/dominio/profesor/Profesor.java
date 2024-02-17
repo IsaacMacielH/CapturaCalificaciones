@@ -1,10 +1,16 @@
 package edu.captura.api.dominio.profesor;
 
+import edu.captura.api.dominio.materia.Materia;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
+
+import java.util.List;
 
 @Table(name= "profesores")
 @Entity(name = "Profesor")
@@ -22,6 +28,11 @@ public class Profesor {
     private Integer codigo;
     private String contra;
     private boolean activo;
+
+    @OneToMany(mappedBy = "profesor")
+    private List<Materia> materias;
+
+
 
     public Profesor(DatosRegistroProfesor datosRegistroProfesor) {
         this.nombre = datosRegistroProfesor.nombre();
