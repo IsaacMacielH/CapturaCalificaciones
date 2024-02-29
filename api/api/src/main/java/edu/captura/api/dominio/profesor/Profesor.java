@@ -11,6 +11,7 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
+import java.util.Set;
 
 @Table(name= "profesores")
 @Entity(name = "Profesor")
@@ -30,7 +31,7 @@ public class Profesor {
     private boolean activo;
 
     @OneToMany(mappedBy = "profesor")
-    private List<Materia> materias;
+    private Set<Materia> materias;
 
 
 

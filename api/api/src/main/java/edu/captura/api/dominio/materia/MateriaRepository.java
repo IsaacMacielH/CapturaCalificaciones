@@ -6,4 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface MateriaRepository extends JpaRepository<Materia, Long> {
     Page<Materia> findByActivaTrue(Pageable paginacion);
+
+    Page<Materia> findByProfesorId(Long id, Pageable paginacion);
+
 }

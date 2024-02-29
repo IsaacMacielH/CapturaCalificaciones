@@ -75,6 +75,17 @@ public class ProfesorController {
     public ResponseEntity<DatosRespuestaProfesor> retornaDatosProfesor(@PathVariable Long id){
         Profesor profesor = profesorRepository.getReferenceById(id);
         var datosRespuestaProfesor = new DatosRespuestaProfesor(profesor.getId(), profesor.getNombre(), profesor.getApellidos(), profesor.getCodigo());
+        System.out.println(datosRespuestaProfesor);
         return ResponseEntity.ok(datosRespuestaProfesor);
     }
+
+
+    //Creo que esto va en MateriasController
+    /*@GetMapping("/{id}/materias")
+    public ResponseEntity<DatosMateriasProfesor> retornaMateriasProfesor(@PathVariable Long id){
+        Profesor profesor = profesorRepository.getReferenceById(id);
+        var datosRespuestaProfesor = new DatosRespuestaProfesor(profesor.getId(), profesor.getNombre(), profesor.getApellidos(), profesor.getCodigo());
+        System.out.println(datosRespuestaProfesor);
+        return ResponseEntity.ok(datosRespuestaProfesor);
+    }*/
 }

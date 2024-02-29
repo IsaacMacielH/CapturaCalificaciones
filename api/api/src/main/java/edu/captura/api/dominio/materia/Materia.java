@@ -26,7 +26,7 @@ public class Materia {
     private boolean activa;
 
     @ManyToOne
-    @JoinColumn(name = "profesor_id")
+    @JoinColumn(name = "imparte")
     private Profesor profesor;
 
 }
