@@ -1,10 +1,13 @@
 package edu.captura.api.dominio.alumno;
 
+import edu.captura.api.dominio.calificacion.Calificacion;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import java.util.Set;
 
 @Table(name="alumnos")
 @Entity(name="Alumno")
@@ -22,4 +25,7 @@ public class Alumno {
     private String apellidos;
     private String grado;
     private String grupo;
+
+    @OneToMany(mappedBy = "alumno_id")
+    private Set<Calificacion> calificaciones;
 }

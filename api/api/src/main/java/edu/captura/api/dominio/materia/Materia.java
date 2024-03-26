@@ -1,5 +1,6 @@
 package edu.captura.api.dominio.materia;
 
+import edu.captura.api.dominio.calificacion.Calificacion;
 import edu.captura.api.dominio.profesor.Profesor;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -29,4 +30,6 @@ public class Materia {
     @JoinColumn(name = "imparte")
     private Profesor profesor;
 
+    @OneToOne(mappedBy = "materia_id")
+    private Calificacion calificacion;
 }
