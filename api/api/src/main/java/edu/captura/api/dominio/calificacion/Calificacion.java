@@ -26,7 +26,11 @@ public class Calificacion {
 
     @OneToOne
     @JoinColumn(name = "id_materia")
-    private Materia materia_id;
+    private Materia materia;
 
     private Long calif;
+
+    public Calificacion(DatosRegistroCalificacion datosRegistroCalificacion){
+        this.
+    }
 }

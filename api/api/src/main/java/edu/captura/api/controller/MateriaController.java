@@ -24,6 +24,7 @@ public class MateriaController {
 
     @GetMapping("/{id}/profesor")
     public ResponseEntity<Page<DatosListadoMaterias>> retornaMateriasProfesor(@PathVariable Long id, Pageable paginacion){
+        System.out.println("Si entró acá");
         return ResponseEntity.ok(materiaRepository.findByProfesorId(id, paginacion).map(DatosListadoMaterias::new));
     }
 }

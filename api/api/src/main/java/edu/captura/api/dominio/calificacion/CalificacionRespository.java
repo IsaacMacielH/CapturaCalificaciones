@@ -8,5 +8,5 @@ public interface CalificacionRespository extends JpaRepository <Calificacion, Lo
 
     //Page <Calificacion> findByMateriaCrn(Long crn, Pageable paginacion);
     //Page<Calificacion> findByMateriaId(Long id, Pageable pageable);
-    Page<Calificacion> findByMateria_idCrn(Long id, Pageable pageable);
+    Page<Calificacion> findByMateria_Crn(Long id, Pageable pageable);
 }

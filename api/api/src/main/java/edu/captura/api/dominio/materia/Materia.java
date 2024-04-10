@@ -30,6 +30,6 @@ public class Materia {
     @JoinColumn(name = "imparte")
     private Profesor profesor;
 
-    @OneToOne(mappedBy = "materia_id")
+    @OneToOne(mappedBy = "materia")
     private Calificacion calificacion;
 }
